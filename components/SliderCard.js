@@ -29,7 +29,7 @@ const SliderCard = ({
 
       const handleInput = (e) => {
         const value = Number(e.target.value);
-        setError(value > maxValue);
+        setError(value > maxValue || value < minValue);
         setInputValue(value);
       };
 
