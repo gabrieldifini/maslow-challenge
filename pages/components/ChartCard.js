@@ -7,10 +7,9 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const ChartCard = ({ title = "", subtitle = "", data, colorsPalette }) => {
   const [colors, setColors] = useState([]);
-  let styles;
 
   useEffect(() => {
-    styles = getComputedStyle(document.body);
+    let styles = getComputedStyle(document.body);
     setColors(colorsPalette.map((color) => getColorFromStyles(styles, color)));
   }, []);
 

@@ -7,8 +7,12 @@ const Slider = ({ color, minValue, maxValue, state, setState, index }) => {
   );
   const [sliderStyle, setSliderStyle] = useState({});
 
-  useEffect(() => {
+  const setupSlider = () => {
     handleSliderUpdate(state.values[index].currentValue);
+  }
+
+  useEffect(() => {
+    setupSlider()
   }, []);
 
   const handleSliderUpdate = (value, e) => {
