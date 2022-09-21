@@ -1,8 +1,8 @@
 import { useState } from "react";
-import SliderCard from "./components/SliderCard";
-import ChartCard from "./components/ChartCard";
-import TotalsCard from "./components/TotalsCard";
-import Modal from "./components/Modal";
+import SliderCard from "../components/SliderCard";
+import ChartCard from "../components/ChartCard";
+import TotalsCard from "../components/TotalsCard";
+import Modal from "../components/Modal";
 
 const DEFAULT_PALETTE = ["var(--green)", "var(--blue)", "var(--orange)"];
 
