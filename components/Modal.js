@@ -28,7 +28,7 @@ const Modal = ({ modal, setModal }) => {
   return (
     modal.visible && (
       <div
-        className="absolute top-0 left-0 h-screen w-screen flex flex-col justify-center"
+        className="fixed top-0 left-0 h-screen w-screen flex flex-col justify-center"
         style={{
           backgroundColor: "var(--modal-bg)",
         }}
