@@ -45,6 +45,31 @@ const Slider = ({ color, minValue, maxValue, state, setState, index }) => {
       });
     } else {
       e && e.preventDefault();
+      const maxPossibleValue = Number(state.values[index].currentValue) +
+        state.remainder / state.values[index].multiplier;
+      setSliderValue(maxPossibleValue);
+      setState((state) => ({
+        remainder: 0,
+        values: state.values.map((item, i) =>
+          i === index ? { ...item, currentValue: maxPossibleValue } : item
+        ),
+      }));
+      const percentage = ((maxPossibleValue - minValue) * 100) / (maxValue - minValue);
+      setSliderStyle({
+        thumb: {
+          left: `${percentage}%`,
+          transform: `translate(-${percentage}%, -50%) rotate(45deg)`,
+          backgroundColor: color,
+        },
+        thumbLabel: {
+          left: `${percentage}%`,
+          transform: `translate(-${percentage}%, -50%)`,
+        },
+        track: {
+          width: `${percentage}%`,
+          backgroundColor: color,
+        },
+      });
     }
   };
 
